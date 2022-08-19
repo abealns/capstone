@@ -10,6 +10,9 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.annotation.Rollback;
 
+import com.aaa.capstone.enity.user;
+import com.aaa.capstone.repository.UserRepository;
+
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = Replace.NONE)
 @Rollback(false)
@@ -24,13 +27,13 @@ private UserRepository repo;
 
 @Test
 public void test() {
-user User = new user();
+user User = new user(null, null, null, null, null, null);
 User.setUsername("JohnJohn255");
 User.setPassword("Password");
 User.setFirstname("John");
 User.setLastname("Smith");
 User.setEmail("johnsmith2001@gmail.com");
-User.setVerified(1);
+//User.setVerified(1);
 
 user savedUser = repo.save(User);
 user existUser = entityManager.find(user.class, savedUser.getId());

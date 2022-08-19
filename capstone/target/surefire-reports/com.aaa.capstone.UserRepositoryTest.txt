@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.aaa.capstone.UserRepositoryTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.44 s <<< FAILURE! - in com.aaa.capstone.UserRepositoryTest
+test  Time elapsed: 0.203 s  <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [user.user_name_UNIQUE]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at com.aaa.capstone.UserRepositoryTest.test(UserRepositoryTest.java:38)
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at com.aaa.capstone.UserRepositoryTest.test(UserRepositoryTest.java:38)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'JohnJohn255' for key 'user.user_name_UNIQUE'
+	at com.aaa.capstone.UserRepositoryTest.test(UserRepositoryTest.java:38)
+
